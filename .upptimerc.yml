@@ -42,6 +42,10 @@ assignees:
 status-website:
   cname: status.postroll.app
   name: PostRoll Status
+  # Brand mark + favicons (served publicly from the app's /public dir).
+  logoUrl: https://postroll.app/PostRoll%20Logo/PostRoll_Logo_White_Wide.svg
+  faviconSvg: https://postroll.app/favicon/favicon.svg
+  favicon: https://postroll.app/favicon/favicon-96x96.png
   introTitle: "PostRoll Status"
   introMessage: >-
     Current and historical uptime for PostRoll's services. Monitored
@@ -54,5 +58,36 @@ status-website:
       href: https://help.postroll.app
     - title: PostRoll
       href: https://postroll.app
-  theme: dark
-  # logoUrl / faviconUrl: point at assets on assets.postroll.app once chosen.
+  # Base theme. Options: light | dark | night | ocean — try each and keep the
+  # one closest to the app's dark plum look.
+  theme: night
+  # Social / share preview + browser theme colour (PostRoll plum).
+  metaTags:
+    - name: "og:title"
+      content: "PostRoll Status"
+    - name: "og:description"
+      content: "Live and historical uptime for PostRoll's services."
+    - name: "theme-color"
+      content: "#8b5cf6"
+
+  # ── Optional deeper theming ────────────────────────────────────────────────
+  # Uncomment to push closer to the marketing look. The `css` selectors target
+  # Upptime's Svelte build, so after the site is live, open it in devtools and
+  # confirm the class names before relying on these — treat this as a starting
+  # point, not final.
+  #
+  customHeadHtml: >-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  css: >-
+    :root { --brand-from:#6366f1; --brand-via:#8b5cf6; --brand-to:#d946ef; }
+    body, button, input, h1, h2, h3 {
+      font-family: 'Geist', system-ui, -apple-system, sans-serif !important;
+    }
+    /* Gradient wordmark on the intro heading (confirm the selector live). */
+    h1 {
+      background: linear-gradient(90deg, var(--brand-from), var(--brand-via), var(--brand-to));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    a { color: var(--brand-via); }
