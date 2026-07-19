@@ -68,26 +68,21 @@ status-website:
     - name: "og:description"
       content: "Live and historical uptime for PostRoll's services."
     - name: "theme-color"
-      content: "#8b5cf6"
+      content: "#0d1117"
 
-  # ── Optional deeper theming ────────────────────────────────────────────────
-  # Uncomment to push closer to the marketing look. The `css` selectors target
-  # Upptime's Svelte build, so after the site is live, open it in devtools and
-  # confirm the class names before relying on these — treat this as a starting
-  # point, not final.
-  #
-  customHeadHtml: >-
+  # ── Light-touch theming ──────────────────────────────────────────────────
+  # Keeps Upptime's `night` base (white text on dark, so the white wordmark
+  # reads) — no plum recolour. Just loads the Geist brand font and hides the
+  # "PostRoll Status" text the navbar repeats next to the logo, so the nav is
+  # logo + the 3 links only.
+  customHeadHtml: |
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  css: >-
-    :root { --brand-from:#6366f1; --brand-via:#8b5cf6; --brand-to:#d946ef; }
+  css: |
     body, button, input, h1, h2, h3 {
-      font-family: 'Geist', system-ui, -apple-system, sans-serif !important;
+      font-family:'Geist', system-ui, -apple-system, sans-serif !important;
     }
-    /* Gradient wordmark on the intro heading (confirm the selector live). */
-    h1 {
-      background: linear-gradient(90deg, var(--brand-from), var(--brand-via), var(--brand-to));
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
-    a { color: var(--brand-via); }
+    /* Navbar = logo only: hide the duplicated "PostRoll Status" wordmark text
+       that sits right after the logo image. */
+    nav img + div { display:none; }
