@@ -1,7 +1,7 @@
 url: https://postroll.app/api/status/email
-status: down
-code: 404
-responseTime: 215
-lastUpdated: 2026-07-19T19:48:52.234Z
+status: up
+code: 200
+responseTime: 149
+lastUpdated: 2026-07-19T21:19:56.299Z
 startTime: 2026-07-19T18:06:03.273Z
 generator: Upptime <https://github.com/upptime/upptime>
