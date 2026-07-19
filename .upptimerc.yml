@@ -1,31 +1,58 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# PostRoll status page — Upptime configuration.
+#
+# This file is the SOURCE COPY. Upptime itself runs from a SEPARATE GitHub repo
+# (postroll-app/upptime) so the status page stays up when postroll.app is down — see
+# ops/upptime/README.md and docs/STATUS_PAGE.md for the one-time bootstrap.
+#
+# Copy this file to the root of the postroll-app/upptime repo as `.upptimerc.yml`.
+# Full schema: https://upptime.js.org/docs/configuration
 
+owner: postroll-app # ← the GitHub org/user that owns the postroll-app/upptime repo
+repo: upptime
+
+# ── What we monitor ──────────────────────────────────────────────────────────
+# Public surfaces are pinged at their real URLs; each managed dependency is
+# pinged at its /api/status/<slug> endpoint, which returns 200 when healthy and
+# 503 when down (see src/app/api/status/[component]/route.ts). A 503 there is an
+# intentional per-dependency signal, NOT an app-down alert.
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
+  - name: Web app
+    url: https://postroll.app
+  - name: Help docs
+    url: https://help.postroll.app
+  - name: Realtime / VTT
+    url: https://postroll-realtime.fly.dev/_health
+  - name: Database
+    url: https://postroll.app/api/status/db
+  - name: Cache (Redis)
+    url: https://postroll.app/api/status/redis
+  - name: File storage
+    url: https://postroll.app/api/status/r2
+  - name: Payments
+    url: https://postroll.app/api/status/stripe
+  - name: Email
+    url: https://postroll.app/api/status/email
+  - name: PDF export
+    url: https://postroll.app/api/status/pdf
+
+# Owners auto-assigned to the incident issue Upptime opens on downtime.
+assignees:
+  - Archie-TaB # ← replace with the GitHub handle(s) that should be paged
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.postroll.app
+  name: PostRoll Status
+  introTitle: "PostRoll Status"
+  introMessage: >-
+    Current and historical uptime for PostRoll's services. Monitored
+    independently every 5 minutes from outside our infrastructure, so this page
+    stays online even during an outage. Subscribe to a service to get notified.
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
-
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+    - title: Help center
+      href: https://help.postroll.app
+    - title: PostRoll
+      href: https://postroll.app
+  theme: dark
+  # logoUrl / faviconUrl: point at assets on assets.postroll.app once chosen.
