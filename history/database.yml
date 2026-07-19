@@ -1,7 +1,7 @@
 url: https://postroll.app/api/status/db
-status: down
-code: 404
-responseTime: 67
-lastUpdated: 2026-07-19T19:48:02.650Z
+status: up
+code: 200
+responseTime: 825
+lastUpdated: 2026-07-19T20:11:21.555Z
 startTime: 2026-07-19T18:05:07.325Z
 generator: Upptime <https://github.com/upptime/upptime>
