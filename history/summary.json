@@ -58,18 +58,20 @@
     "url": "https://postroll.app/api/status/db",
     "icon": "https://icons.duckduckgo.com/ip3/postroll.app.ico",
     "slug": "database",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 611,
-    "timeDay": 282,
-    "timeWeek": 521,
-    "timeMonth": 611,
-    "timeYear": 611,
-    "dailyMinutesDown": {}
+    "time": 599,
+    "timeDay": 241,
+    "timeWeek": 481,
+    "timeMonth": 599,
+    "timeYear": 599,
+    "dailyMinutesDown": {
+      "2026-08-18": 0
+    }
   },
   {
     "name": "Cache (Redis)",
