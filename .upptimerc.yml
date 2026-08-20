@@ -34,6 +34,11 @@ sites:
     url: https://postroll.app/api/status/email
   - name: PDF export
     url: https://postroll.app/api/status/pdf
+  # Stands in for every function that loads sharp — share cards, partner
+  # deliveries, promo tickets, map export — since they share the native
+  # dependency that silently failed to link in the deployed bundle.
+  - name: Share cards
+    url: https://postroll.app/api/status/og
 
 # Owners auto-assigned to the incident issue Upptime opens on downtime.
 assignees:
