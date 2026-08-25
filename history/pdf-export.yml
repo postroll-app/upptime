@@ -1,7 +1,7 @@
 url: https://postroll.app/api/status/pdf
-status: down
-code: 503
-responseTime: 158
-lastUpdated: 2026-08-25T16:01:33.494Z
+status: up
+code: 200
+responseTime: 78
+lastUpdated: 2026-08-25T16:47:58.863Z
 startTime: 2026-07-19T18:06:17.516Z
 generator: Upptime <https://github.com/upptime/upptime>
